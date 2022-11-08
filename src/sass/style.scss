@@ -66,6 +66,7 @@ body {
   position: sticky;
   top: 0px;
   height: 6rem;
+  background-color: var(--color-primary-light);
 
   @media only screen and (max-width: $break-point-phone) {
     height: 5rem;
@@ -197,6 +198,10 @@ body {
   &__btn--close {
     align-self: flex-end;
     height: 6rem;
+
+    @media only screen and (max-width: $break-point-phone) {
+      height: 5rem;
+    }
   }
 
   &__btn--submit {
@@ -262,10 +267,6 @@ h1 {
   font-size: 4rem;
   margin-top: 4rem;
   margin-bottom: 1rem;
-
-  @media only screen and (max-width: $break-point-phone) {
-    margin-top: 2rem;
-  }
 }
 
 .btn {
@@ -295,12 +296,15 @@ h1 {
   &__icon {
     transition: all 0.5s;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     & svg {
-      display: flex;
       width: 2rem;
       height: 2rem;
       fill: var(--color-primary-dark);
+      margin-top: 0.1rem;
     }
 
     &:hover:not(.checkbox) {

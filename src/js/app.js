@@ -35,13 +35,10 @@ const preFillForm = function (todo) {
   formContainer.querySelector('#id').value = todo.id;
   formContainer.querySelector('#todo').value = todo.todo;
   formContainer.querySelector(`#priority-${todo.priority}`).checked = true;
-  formContainer.querySelector('#top').checked = todo.isTop;
+  formContainer.querySelector('#top').checked = false;
   formContainer
-    .querySelector('.checkbox use')
-    .setAttribute(
-      'href',
-      `${icons}#${todo.isTop ? 'icon-check-square' : 'icon-square-o'}`
-    );
+    .querySelector('.btn__checkbox use')
+    .setAttribute('href', `${icons}#icon-square-o`);
 };
 
 const initForm = function () {
@@ -57,11 +54,11 @@ const initForm = function () {
 };
 
 const toggleCheckbox = function (e) {
-  const checkbox = e.target.closest('.checkbox');
+  const checkbox = e.target.closest('.btn__checkbox');
   if (!checkbox) return;
 
-  checkbox.classList.toggle('checked');
-  const isChecked = checkbox.classList.contains('checked');
+  let isChecked = formContainer.querySelector('#top').checked;
+  isChecked = !isChecked;
   checkbox
     .querySelector('use')
     .setAttribute(
