@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/sass/style.scss">
+    <script type="module" src="src/js/app.js"></script>
+
+    <title>Todo List</title>
+</head>
+
+<body>
+
+    <h1>TODO LIST</h1>
+
+    <div class="container">
+        <div class="container__main">
+            <div class="topbar">
+                <ul class="topbar__categories">
+                    <li class="topbar__category topbar__category--active" data-category="all">ALL</li>
+                    <li class="topbar__category" data-category="high">HIGH</li>
+                    <li class="topbar__category" data-category="medium">MEDIUM</li>
+                    <li class="topbar__category" data-category="low">LOW</li>
+                </ul>
+                <button class="topbar__btn--add btn btn__icon">
+                    <svg class="add__icon">
+                        <use href="src/img/sprite.svg#icon-plus"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="todos">
+                <p class="todo__msg">All done
+                    <svg class="smile__icon">
+                        <use href="src/img/sprite.svg#icon-smile-o"></use>
+                    </svg>
+                </p>
+                <div class="todo__category todo__category--priority-high">
+                    <!-- <div class="todo todo__tag--priority-high">
+                        <div class="btn btn__icon checkbox">
+                            <svg class="checkbox__icon">
+                                <use href="src/img/sprite.svg#$icon-square-o"></use>
+                            </svg>
+                        </div>
+                        <p class="todo__content">water the plants</p>
+                        <button class="btn todo__btn todo__btn--edit btn__icon">
+                            <svg>
+                                <use href="src/img/sprite.svg#icon-edit"></use>
+                            </svg>
+                        </button>
+                        <button class="btn todo__btn todo__btn--remove btn__icon">
+                            <svg>
+                                <use href="src/img/sprite.svg#icon-trash-o"></use>
+                            </svg>
+                        </button>
+                        <button class="btn todo__btn todo__btn--up btn__icon">
+                            <svg>
+                                <use href="src/img/sprite.svg#icon-arrow-up-thick"></use>
+                            </svg>
+                        </button>
+                        <button class="btn todo__btn todo__btn--down btn__icon">
+                            <svg>
+                                <use href="src/img/sprite.svg#icon-arrow-down-thick"></use>
+                            </svg>
+                        </button>
+                    </div> -->
+                </div>
+                <div class="todo__category todo__category--priority-medium">
+
+                </div>
+                <div class="todo__category todo__category--priority-low">
+
+                </div>
+                <div class="todo__category todo__category--completed">
+                    <!-- <div class="todo todo__tag--completed">
+                        <div class="btn btn__icon checkbox">
+                            <svg class="checkbox__icon">
+                                <use href="src/img/sprite.svg#$icon-check-square"></use>
+                            </svg>
+                        </div>
+                        <p class="todo__content">do the laundry</p>
+                        <button class="btn todo__btn todo__btn--edit btn__icon">
+                            <svg>
+                                <use href="src/img/sprite.svg#icon-edit"></use>
+                            </svg>
+                        </button>
+                        <button class="btn todo__btn todo__btn--remove btn__icon">
+                            <svg>
+                                <use href="src/img/sprite.svg#icon-trash-o"></use>
+                            </svg>
+                        </button>
+                        <button class="btn todo__btn todo__btn--up btn__icon">
+                            <svg>
+                                <use href="src/img/sprite.svg#icon-arrow-up-thick"></use>
+                            </svg>
+                        </button>
+                        <button class="btn todo__btn todo__btn--down btn__icon">
+                            <svg>
+                                <use href="src/img/sprite.svg#icon-arrow-down-thick"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div> -->
+                </div>
+
+                <button class="btn btn__large">Delete all completed</button>
+            </div>
+        </div>
+
+
+        <div class="container__form hidden__immediate">
+            <button class="btn btn__icon form__btn--close">
+                <svg class="close__icon">
+                    <use href="src/img/sprite.svg#icon-close"></use>
+                </svg>
+            </button>
+            <form action="#" class="form">
+                <div>
+                    <label for="id"></label>
+                    <input type="hidden" name="id" id="id">
+                </div>
+                <div class="input input__todo">
+                    <label for="todo"></label>
+                    <input type="text" name="todo" id="todo" placeholder="Add a new todo..." required>
+                </div>
+                <div class="input input__priority">
+                    <p>Priority</p>
+                    <input type="radio" class="input__priority--high hidden" name="priority" value="high"
+                        id="priority-high">
+                    <label for="priority-high">
+                        <span class="btn btn__priority btn__priority--high" data-priority="high">HIGH</span>
+                    </label>
+                    <input type="radio" class="input__priority--medium hidden" name="priority" value="medium"
+                        id="priority-medium" checked>
+                    <label for="priority-medium">
+                        <span class="btn btn__priority btn__priority--medium" data-priority="medium">MEDIUM</span>
+                    </label>
+                    <input type="radio" class="input__priority--low hidden" name="priority" value="low"
+                        id="priority-low">
+                    <label for="priority-low">
+                        <span class="btn btn__priority btn__priority--low" data-priority="low">LOW</span>
+                    </label>
+                </div>
+                <div class="input input__top">
+                    <p class="label">Move to the top</p>
+                    <label for="top">
+                        <div class="btn btn__icon checkbox">
+                            <svg class="checkbox__icon">
+                                <use href="src/img/sprite.svg#icon-square-o"></use>
+                            </svg>
+                        </div>
+                    </label>
+                    <input type="checkbox" class="hidden" name="top" id="top">
+                </div>
+                <button class="btn btn__large form__btn--submit">Add Todo</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        Copyright &copy; 2022 by rosiiietsai. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
